@@ -70,15 +70,15 @@ print (
         + "\n-------------------------"
     )     
 # Write results to text file
-file = open('analysis\PyPoll Result.txt', 'w')
+file = open('analysis/PyPoll Result.txt', 'w')
 file.write ("Election Results"
             + "\n-------------------------" 
             + "\nTotal Votes: " + str(len(candidates))
             + "\n-------------------------"  
             + str(final_result)
-            # + "\n-------------------------"
-            # + "\nWinner "
-            # + str(max(total_votes, key=total_votes.get))
-            # + "\n-------------------------"
+            + "\n-------------------------"
+            + "\nWinner "
+            + str(max(total_votes, key=total_votes.get))
+            + "\n-------------------------"
             )
 file.close()
