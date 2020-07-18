@@ -43,10 +43,12 @@ with open(budgetdata_csv) as budgetdata_file:
         #store result in "change_profit_loss variable"
         change_profit_loss.append(int(profit_loss[value]) - int(profit_loss[value-1]))
 
-    # def average(change_profit_loss):
-        # averagechange_profit_loss = sum(change_profit_loss)/len(change_profit_loss)
+    def average(change_profit_loss):
+        averagechange_profit_loss = sum(change_profit_loss)/len(change_profit_loss)
 
-#         return averagechange_profit_loss
+        return round((averagechange_profit_loss),2)
 
-# print
-
+    #print "Average Change, Greatest Change, and Greatest Decrease in Profit/Loss, " 
+    print ("Average  Change: $" + str(average(change_profit_loss)))
+    print ("Greatest Increase in Profits: " + str(max(change_profit_loss)))
+    print ("Greatest Decrease in Profits: " + str(min(change_profit_loss)))
