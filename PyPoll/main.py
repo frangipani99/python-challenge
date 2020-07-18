@@ -26,19 +26,21 @@ with open(electiondata_csv) as electiondata_file:
             + "\n-------------------------" 
             + "\nTotal Votes: " + str(len(candidates))
             + "\n-------------------------" 
-            # + "\nTotal: $" + str(total_profit_loss)
             )   
-    
-def unique(candidates):
+# define "unique candidates" variable as list
     unique_candidates_list = []
 
+ 
+ # iterate through "candidates" list and pull unique names into "unique_candidates_list" list and print results
     for name in candidates:
         if name not in unique_candidates_list:
             unique_candidates_list.append(name)
+
     
-    print (
-            str(unique_candidates_list)
-            )
+    
+        
+    
+    print(unique_candidates_list)
                 
 #     # iterate through "profit/loss list" to calculate average change in profit/loss
 #     for value in range (1, len(profit_loss)):
