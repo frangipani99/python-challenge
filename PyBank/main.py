@@ -73,7 +73,7 @@ with open(budgetdata_csv) as budgetdata_file:
             + str(min(change_profit_loss))
             )
 # Write results to text file
-file = open('PyBank Results.txt', 'w')
+file = open('analysis/PyBank Results.txt', 'w')
 file.write ("Financial Analysis"
             + "\n----------------------------" 
             + "\nTotal Months: " + str(len(date))
