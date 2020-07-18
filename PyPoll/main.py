@@ -74,7 +74,7 @@ file = open('analysis/PyPoll Result.txt', 'w')
 file.write ("Election Results"
             + "\n-------------------------" 
             + "\nTotal Votes: " + str(len(candidates))
-            + "\n-------------------------"  
+            + "\n-------------------------\n"  
             + str(final_result)
             + "\n-------------------------"
             + "\nWinner "
