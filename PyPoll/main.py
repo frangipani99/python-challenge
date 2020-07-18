@@ -29,66 +29,16 @@ with open(electiondata_csv) as electiondata_file:
             )   
 # define "unique candidates" variable as list
     unique_candidates_list = []
-
+    total_votes = {}
  
  # iterate through "candidates" list and pull unique names into "unique_candidates_list" list and print results
     for name in candidates:
         if name not in unique_candidates_list:
             unique_candidates_list.append(name)
 
-    
-    
-        
-    
-    print(unique_candidates_list)
-                
-#     # iterate through "profit/loss list" to calculate average change in profit/loss
-#     for value in range (1, len(profit_loss)):
-        
-#         #store result in "change_profit_loss variable"
-#         change_profit_loss.append(int(profit_loss[value]) - int(profit_loss[value-1]))
 
-#     #calulate average "Change in Profit Loss"
-#     def average(change_profit_loss):
-#         averagechange_profit_loss = sum(change_profit_loss)/len(change_profit_loss)
+    # iterate through "candidates" list and count each time a vota is cast for a candidate
+    for name in unique_candidates_list:
+        total_votes[name] = candidates.count(name)
 
-#         return round((averagechange_profit_loss),2)
-
-#     #remove first value from "Date" to align with "Change Profit/Loss list" list
-#     date.pop(0)
-
-#     #create a dictionary with "Date" and Average Change in Profit/loss" list   
-#     change_profitloss_dict = dict(zip(date,change_profit_loss))
-
-#     #print "Average Change, Greatest Change, and Greatest Decrease in Profit/Loss, " 
-#     print ("Average  Change: $" + str(average(change_profit_loss)))
-#     print (
-#             "Greatest Increase in Profits: " 
-#             #print key in dictionary that matches "Greatest Increase"
-#             + max(change_profitloss_dict, key=change_profitloss_dict.get)
-#             + " "
-#             + str(max(change_profit_loss))
-#             )
-#     print (
-#             "Greatest Decrease in Profits: " 
-#             #print key in dictionary that matches "Greatest Decrease"
-#             + min(change_profitloss_dict, key=change_profitloss_dict.get)
-#             + " "
-#             + str(min(change_profit_loss))
-#             )
-# # Write results to text file
-# file = open('analysis/PyBank Results.txt', 'w')
-# file.write ("Financial Analysis"
-#             + "\n----------------------------" 
-#             + "\nTotal Months: " + str(len(date))
-#             + "\nTotal: $" + str(total_profit_loss)
-#             + "\nAverage  Change: $" + str(average(change_profit_loss))
-#             + "\nGreatest Increase in Profits: " 
-#             + max(change_profitloss_dict, key=change_profitloss_dict.get)
-#             + " "
-#             + str(max(change_profit_loss))
-#             + "\nGreatest Decrease in Profits: " 
-#             + min(change_profitloss_dict, key=change_profitloss_dict.get)
-#             + " "
-#             + str(min(change_profit_loss)))
-# file.close()
+print (total_votes)
