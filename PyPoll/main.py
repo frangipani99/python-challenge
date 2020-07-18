@@ -37,8 +37,19 @@ with open(electiondata_csv) as electiondata_file:
             unique_candidates_list.append(name)
 
 
-    # iterate through "candidates" list and count each time a vota is cast for a candidate
+    # iterate through "candidates" list and count each time a vota is cast for a candidate and put in dictionary called "total votes"
     for name in unique_candidates_list:
         total_votes[name] = candidates.count(name)
+
+#create a dictionary named "percent votes" to hold the percent of votes each candidate received
+percent_votes = {}
+
+#loop through total votes dictionary and take total votes for each candidate and divide by the total votes - round to 2 decimal points
+for name in total_votes:
+    percent_votes [name] = round((total_votes [name] / len(candidates) * 100),2)
+
+
+#create a dictionary named "final result" to hold the percent of votes each candidate received
+total_votes[name].update(percent_votes[name])
 
 print (total_votes)
