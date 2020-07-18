@@ -65,7 +65,6 @@ with open(budgetdata_csv) as budgetdata_file:
             + " "
             + str(max(change_profit_loss))
             )
-
     print (
             "Greatest Decrease in Profits: " 
             #print key in dictionary that matches "Greatest Decrease"
@@ -73,3 +72,19 @@ with open(budgetdata_csv) as budgetdata_file:
             + " "
             + str(min(change_profit_loss))
             )
+# Write results to text file
+file = open('PyBank Results.txt', 'w')
+file.write ("Financial Analysis"
+            + "\n----------------------------" 
+            + "\nTotal Months: " + str(len(date))
+            + "\nTotal: $" + str(total_profit_loss)
+            + "\nAverage  Change: $" + str(average(change_profit_loss))
+            + "\nGreatest Increase in Profits: " 
+            + max(change_profitloss_dict, key=change_profitloss_dict.get)
+            + " "
+            + str(max(change_profit_loss))
+            + "\nGreatest Decrease in Profits: " 
+            + min(change_profitloss_dict, key=change_profitloss_dict.get)
+            + " "
+            + str(min(change_profit_loss)))
+file.close()
